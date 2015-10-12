@@ -157,3 +157,21 @@ footer {
 p.copyright {
     margin: 15px 0 0;
 }
+
+.mediator-description {
+  padding: 30px 0;
+  background-color: #f8f8f8;
+}
+
+.mediator-header {
+  padding-top: 80px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+  padding-bottom: 45px;
+  text-align: center;
+  color: #333;
+  background: url('../img/congruent_pentagon.png') repeat;
+}
+
+.mediators-loading {
+  text-align: center;
+  font-size: 4em;
+}
