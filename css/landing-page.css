@@ -92,6 +92,15 @@ img.center {
   border-bottom: 1px solid #e7e7e7;
 }
 
+.feature-header {
+  text-align: center;
+}
+
+.feature-header-divider {
+  border-top: 2px solid #e7e7e7;
+  padding-bottom: 50px
+}
+
 .content-section-a {
     padding: 50px 0;
     background-color: #f8f8f8;
