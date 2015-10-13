@@ -71,7 +71,6 @@
     </nav>
 
     <!-- Header -->
-    <a name="about"></a>
     <div class="intro-header">
         <div class="container">
 
@@ -100,13 +99,7 @@
               <div class="col-lg-2"></div>
               <div class="col-lg-8">
                 <p class="lead">
-                  The OpenHIM allows you to <b>secure and view requests to your web service APIs</b>. It acts as a reverse proxy to your upstream services and while doing so enables visibility into your SOA by logging each request and by providing metrics about requests hitting your services. It also provides a central entry point to your service-oriented-architecture (SOA) and allows you to secure access through mutual TLS or basic-auth.
-                </p>
-                <p class="lead">
-                  The OpenHIM is easy to install and can be easily configured to meet your needs through the administration console. You can also <b>extend the OpenHIM to transform or orchestrate requests through the mediator framework</b>.
-                </p>
-                <p class="lead">
-                  Plus, the OpenHIM is fully <b>open-source</b>! Browse the OpenHIM features below or get started right away. <a href="http://openhim.readthedocs.org/en/latest/getting-started.html#getting-started"><i class="fa fa-arrow-circle-right"></i></a>
+                  The <b>Open Health Information Mediator</b> (OpenHIM) is a middleware component designed to ease interoperability between disparate information systems. It provides secure communications and data governance as well as support for routing, orchestrating and translating requests as they flow between systems.
                 </p>
               </div>
               <div class="col-lg-2"></div>
@@ -122,6 +115,30 @@
     <a href="https://github.com/jembi/openhim-core-js"><img style="position: absolute; top: 50px; left: 0; border: 0;" src="https://camo.githubusercontent.com/121cd7cbdc3e4855075ea8b558508b91ac463ac2/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png"></a>
 
     <!-- Page Content -->
+    <a name="about"></a>
+    <div class="content-about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <h1>About</h1>
+            <p class="lead">
+              The OpenHIM allows you to <b>secure and view requests to your web service APIs</b>. It acts as a reverse proxy to your upstream services and while doing so enables visibility into your service-oriented architecture (SOA) by logging each request and by providing metrics about requests hitting your services. It also provides a central entry point into your SOA and allows you to secure access through mutual TLS or basic-auth.
+            </p>
+            <p class="lead">
+              The OpenHIM is easy to install and can be easily configured to meet your needs through the administration console. You can also <b>extend the OpenHIM to transform or orchestrate requests through the mediator framework</b>.
+            </p>
+            <p class="lead">
+              Plus, the OpenHIM is fully <b>open-source</b>! It is currently developed and maintained by <a href="http://www.jembi.org/">Jembi Health Systems</a> and was initially developed in collaboration with <a href="http://www.ukzn.ac.za/">UKZN</a>. Browse the OpenHIM features below or get started right away. <a href="http://openhim.readthedocs.org/en/latest/getting-started.html#getting-started"><i class="fa fa-arrow-circle-right"></i></a>
+            </p>
+          </div>
+          <div class="col-lg-3 col-lg-offset-1">
+              <img class="img-responsive about-logos" src="img/jembi.png"></img>
+              <img class="img-responsive about-logos" src="img/heal.png"></img>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <a name="mediators"></a>
     <div class="content-mediators">
       <div class="container">
@@ -195,7 +212,7 @@
                     <p class="lead">The administration console allows you to view requests as they travel through the system as well as view metrics such as transaction load and error rates.</p>
                 </div>
                 <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                    <img class="img-responsive" src="img/console.gif" alt="">
+                    <img class="img-responsive shadow" src="img/console.gif" alt="">
                 </div>
             </div>
 
@@ -240,7 +257,7 @@
                     <p class="lead">The OpenHIM provides a secure interface to upstream hosts with certificate management and self signed certificate generation along with advanced access control mechanisms based on client and server certificates.</p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="img/certs.png" alt="">
+                    <img class="img-responsive shadow" src="img/certs.png" alt="">
                 </div>
             </div>
 
@@ -262,7 +279,7 @@
                     <p class="lead">If you need it, full support for IHE’s ATNA profile is provided. Both node authentication and audit trails are supported. The OpenHIM also provides a full ATNA audit repository implementation and audit viewer.</p>
                 </div>
                 <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                    <img class="img-responsive" src="img/audit.png" alt="">
+                    <img class="img-responsive shadow" src="img/audit.png" alt="">
                 </div>
             </div>
 
@@ -284,7 +301,7 @@
                     <p class="lead">User alerts can be configured for when requests fail or a particular failure rate is exceeded. Users can be notified via email or sms.</p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="img/alerts.png" alt="">
+                    <img class="img-responsive shadow" src="img/alerts.png" alt="">
                 </div>
             </div>
 
@@ -328,7 +345,7 @@
                     <p class="lead">If failures occur the OpenHIM can re-run requests to your services if your client systems are not able to. It allows you to review and bulk re-run requests or re-run individual requests.</p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="img/rerun.png" alt="">
+                    <img class="img-responsive shadow" src="img/rerun.png" alt="">
                 </div>
             </div>
 
