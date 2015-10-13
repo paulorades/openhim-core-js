@@ -42,7 +42,7 @@ var MediatorList = React.createClass({
       );
     } else {
       var nodes = this.state.data.map(function (item) {
-        return <MediatorDetails data={item} />
+        return <MediatorDetails key={item.id} data={item} />
       });
       return (
         <div className="mediatorList">
