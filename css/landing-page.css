@@ -210,3 +210,17 @@ p.copyright {
 .mediator-icon {
   font-size: 10em;
 }
+
+.navbar-brand {
+  height: 50px;
+  padding: 5px;
+}
+
+.navbar-logo {
+  height: 40px;
+  width: auto;
+}
+
+.justify {
+  text-align: justify;
+}
