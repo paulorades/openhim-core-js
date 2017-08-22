@@ -46,7 +46,7 @@ RouteMetadataDef =
 TransactionSchema = new Schema
   "clientID":           Schema.Types.ObjectId
   "clientIP":           String
-  "parentID":           Schema.Types.ObjectId
+  "parentID":           Schema.Types.ObjectId, index: true
   "childIDs":           [Schema.Types.ObjectId]
   "channelID":          type: Schema.Types.ObjectId, index: true
   "request":            RequestDef
@@ -66,6 +66,7 @@ TransactionSchema = new Schema
     enum:     ['Processing', 'Failed', 'Completed', 'Successful', 'Completed with error(s)']
 
 TransactionSchema.index "request.timestamp"
+TransactionSchema.index "channelID": 1, "request.timestamp": 1
 
 # Compile schema into Model
 exports.Transaction = connectionDefault.model 'Transaction', TransactionSchema
