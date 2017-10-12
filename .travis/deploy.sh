@@ -31,7 +31,7 @@ if [ $? -eq 0 ]; then
 else
     echo "File is missing"
 fi
-scp -oStrictHostKeyChecking=no ../resources/docker/Dockerfile travis_deploy@$REMOTE_URL:~
+scp -oStrictHostKeyChecking=no Dockerfile travis_deploy@$REMOTE_URL:~
 
 # Log into remote server
 ssh -oStrictHostKeyChecking=no travis_deploy@$REMOTE_URL <<EOF
@@ -42,7 +42,6 @@ ssh -oStrictHostKeyChecking=no travis_deploy@$REMOTE_URL <<EOF
     docker stop openhim-core-$REMOTE_TARGET
     # docker rm openhim-core-$REMOTE_TARGET-backup
     docker rename openhim-core-$REMOTE_TARGET openhim-core-$REMOTE_TARGET-backup-$NOW
-    docker rm openhim-core-$REMOTE_TARGET
 
     # Build docker image with latest changes
     docker build --build-arg branch=$REMOTE_TARGET -t $REMOTE_TARGET/openhim-core .
