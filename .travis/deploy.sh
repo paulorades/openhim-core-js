@@ -31,7 +31,7 @@ if [ $? -eq 0 ]; then
 else
     echo "File is missing"
 fi
-scp -oStrictHostKeyChecking=no Dockerfile travis_deploy@$REMOTE_URL:~
+scp -oStrictHostKeyChecking=no .travis/Dockerfile travis_deploy@$REMOTE_URL:~
 
 # Log into remote server
 ssh -oStrictHostKeyChecking=no travis_deploy@$REMOTE_URL <<EOF
