@@ -2,7 +2,7 @@
 set -x # Show the output of the following commands (useful for debugging)
 
 # Set variables
-REMOTE_TARGET=test
+REMOTE_TARGET="test"
 if [[ $1 ]]; then
     REMOTE_TARGET=$1 # target environment config: [test/staging]
 fi
@@ -11,11 +11,13 @@ NOW=`date +%Y%m%d%H%M%S`
 API_PORT=9090
 HTTP_PORT=6001
 HTTPS_PORT=6000
+NODE_ENV="test"
 if [ "$REMOTE_TARGET" = "test" ]; then
     API_PORT=9090
     HTTP_PORT=6001
     HTTPS_PORT=6000
 else
+    NODE_ENV="production" # optimise staging config
     API_PORT=8080
     HTTP_PORT=5001
     HTTPS_PORT=5000
@@ -52,8 +54,9 @@ ssh -oStrictHostKeyChecking=no travis_deploy@$REMOTE_URL <<EOF
         -p $API_PORT:$API_PORT \
         -p $HTTPS_PORT:$HTTPS_PORT \
         -p $HTTP_PORT:$HTTP_PORT \
-        -e mongo_url="mongodb://openhim-mongo/openhim" \
-        -e mongo_atnaUrl="mongodb://openhim-mongo/openhim" \
+        -e mongo_url="mongodb://openhim-mongo/openhim-test" \
+        -e mongo_atnaUrl="mongodb://openhim-mongo/openhim-test" \
+        -e NODE_ENV="$NODE_ENV" \
         --network=openhim-$REMOTE_TARGET \
         --name=openhim-core-$REMOTE_TARGET \
         $REMOTE_TARGET/openhim-core

@@ -1,14 +1,18 @@
 {
   "mongo": {
-    "url": "mongodb://localhost/openhim-test",
-    "atnaUrl": "mongodb://localhost/openhim-test"
+    "url": "mongodb://openhim-mongo/openhim-test",
+    "atnaUrl": "mongodb://openhim-mongo/openhim-test"
   },
   "logger": {
     "level": "fatal"
   },
+  "router": {
+    "httpPort": 6001,
+    "httpsPort": 6000
+  },
   "api": {
     "enabled" : true,
-    "httpsPort": 8080,
+    "httpsPort": 9090,
     "authWindowSeconds": 50,
     "maxBodiesSizeMB": 15,
     "maxPayloadSizeMB": 50,
