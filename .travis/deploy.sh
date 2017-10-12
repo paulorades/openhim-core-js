@@ -23,18 +23,18 @@ fi
 echo "Ports: $API_PORT, $HTTP_PORT, $HTTPS_PORT"
 
 # Copy new Dockerfile to remote server
-ssh -i ~/.ssh/deploy_key travis_deploy@188.166.147.164 "test -e ~/Dockerfile"
+ssh -oStrictHostKeyChecking=no travis_deploy@188.166.147.164 "test -e ~/Dockerfile"
 if [ $? -eq 0 ]; then
     # your file exists
     echo "File exists"
-    ssh -i ~/.ssh/deploy_key travis_deploy@188.166.147.164 "rm ~/Dockerfile"
+    ssh -oStrictHostKeyChecking=no travis_deploy@188.166.147.164 "rm ~/Dockerfile"
 else
     echo "File is missing"
 fi
-scp -i ~/.ssh/deploy_key -oStrictHostKeyChecking=no ../resources/docker/Dockerfile travis_deploy@$REMOTE_URL:~
+scp -oStrictHostKeyChecking=no ../resources/docker/Dockerfile travis_deploy@$REMOTE_URL:~
 
 # Log into remote server
-ssh -i ~/.ssh/deploy_key -oStrictHostKeyChecking=no travis_deploy@$REMOTE_URL <<EOF
+ssh -oStrictHostKeyChecking=no travis_deploy@$REMOTE_URL <<EOF
     sudo su
 
     # backup & shutown current containers
