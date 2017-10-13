@@ -6,13 +6,9 @@
   "logger": {
     "level": "fatal"
   },
-  "router": {
-    "httpPort": 6001,
-    "httpsPort": 6000
-  },
   "api": {
     "enabled" : true,
-    "httpsPort": 9090,
+    "httpsPort": 8080,
     "authWindowSeconds": 50,
     "maxBodiesSizeMB": 15,
     "maxPayloadSizeMB": 50,

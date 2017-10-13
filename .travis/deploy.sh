@@ -8,20 +8,10 @@ if [[ $1 ]]; then
 fi
 REMOTE_URL=188.166.147.164
 NOW=`date +%Y%m%d%H%M%S`
-API_PORT=9090
-HTTP_PORT=6001
-HTTPS_PORT=6000
-NODE_ENV="test"
-if [ "$REMOTE_TARGET" = "test" ]; then
-    API_PORT=9090
-    HTTP_PORT=6001
-    HTTPS_PORT=6000
-else
-    NODE_ENV="production" # optimise staging config
-    API_PORT=8080
-    HTTP_PORT=5001
-    HTTPS_PORT=5000
-fi
+API_PORT=8080
+HTTP_PORT=5001
+HTTPS_PORT=5000
+NODE_ENV="production"
 echo "Ports: $API_PORT, $HTTP_PORT, $HTTPS_PORT"
 
 # Copy new Dockerfile to remote server

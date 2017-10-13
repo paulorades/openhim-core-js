@@ -1,5 +1,8 @@
-FROM node:8
+FROM node:8.6
 ARG branch
+
+RUN node -v
+RUN npm -v
 
 WORKDIR /etc
 
